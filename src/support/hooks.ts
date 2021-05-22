@@ -1,7 +1,6 @@
-const { BeforeAll, Before, After, AfterAll, Status } = require("@cucumber/cucumber");
+const { Before, After, AfterAll, Status } = require("@cucumber/cucumber");
 import { AfterStep, BeforeStep } from "@cucumber/cucumber";
 import { browser } from "protractor";
-import { logger } from "./logger";
 
 
 declare let global :any;
