@@ -52,3 +52,12 @@
     bash docker-executor.sh
     docker-compose down
     ```
+    
+ Report Samples :
+ 
+ ![alt text](https://github.com/mayurpatild/bdd-protractor-ts/blob/Test/images/report-feature-dashboard.png?raw=true)
+ 
+ ![alt text](https://github.com/mayurpatild/bdd-protractor-ts/blob/Test/images/report-scenarios.png?raw=true)
+    
+    
+    
