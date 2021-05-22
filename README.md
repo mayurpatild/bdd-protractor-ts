@@ -15,7 +15,6 @@
 * Install libraries
     ```
     npm install
-    npm install -g jake
     ```
 
 * Webdriver update lets you download the **chrome & gecko driver** binaries locally for you!
