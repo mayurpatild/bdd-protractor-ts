@@ -17,7 +17,7 @@ export const config: Config = {
         shardTestFiles: true,
         maxInstances: 2,
         chromeOptions: {
-            args: ['disable-infobars', 'no-sandbox', 'disable-dev-shm-usage']
+            args: ['--disable-infobars', '--no-sandbox', '--disable-dev-shm-usage']
         }
     },
 
