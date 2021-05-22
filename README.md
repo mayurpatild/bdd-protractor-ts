@@ -5,6 +5,7 @@
 - [x] Hooks
 - [x] Parallel testing
 - [x] HTML Reporter
+- [x] Step-wise auto screenshots
 - [x] Screenshots on failure
 - [x] Loggers
 - [x] TS task scheduler
@@ -52,3 +53,14 @@
     bash docker-executor.sh
     docker-compose down
     ```
+    
+ Report Samples :
+ 
+ ![alt text](https://github.com/mayurpatild/bdd-protractor-ts/blob/Test/images/report-feature-dashboard.png?raw=true)
+ 
+ ![alt text](https://github.com/mayurpatild/bdd-protractor-ts/blob/Test/images/report-stepwise-screenshots.png?raw=true)
+ 
+ ![alt text](https://github.com/mayurpatild/bdd-protractor-ts/blob/Test/images/report-scenarios.png?raw=true)
+    
+    
+    
