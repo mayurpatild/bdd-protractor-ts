@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: |
           npm install
-          npm run webdriver-update
+          node ./node_modules/protractor/bin/webdriver-manager update --gecko=false
 
       - name: Test
         run: |
