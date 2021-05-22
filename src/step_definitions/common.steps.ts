@@ -1,7 +1,7 @@
 import { browser, by, $ } from "protractor";
 import { GuidePage } from "../pages/guide.po";
 import { ApiPage } from "../pages/api.po";
-const { Given, When } = require("cucumber");
+const { Given, When } = require("@cucumber/cucumber");
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 

@@ -1,5 +1,5 @@
 import { browser, by, $ } from "protractor";
-const { Given, When } = require("cucumber");
+const { Given, When } = require("@cucumber/cucumber");
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 import { ApiPage } from "../pages/api.po";

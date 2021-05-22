@@ -1,4 +1,5 @@
-const { BeforeAll, Before, After, AfterAll, Status } = require("cucumber");
+const { BeforeAll, Before, After, AfterAll, Status } = require("@cucumber/cucumber");
+import { AfterStep, BeforeStep } from "@cucumber/cucumber";
 import { browser } from "protractor";
 import { logger } from "./logger";
 
@@ -7,7 +8,11 @@ declare let global :any;
 
 Before((scenario) => {
     global.tcname = scenario.pickle.name.replace(/\s/g,'_').toLowerCase();
-    logger(global['tcname'],'********** START **********');
+});
+
+AfterStep(async function(scenario)  {
+    const screenShot = await browser.takeScreenshot();
+    this.attach(screenShot, "image/png");
 });
 
 After({timeout: 100 * 1000}, async function(scenario) {

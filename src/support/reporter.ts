@@ -2,7 +2,6 @@ import * as reporter from "multiple-cucumber-html-reporter";
 import * as fs from "fs";
 import * as mkdirp from "mkdirp";
 import * as path from "path";
-import { setWorldConstructor } from "cucumber";
 import { hostname, userInfo } from "os";
 const jsonReports = path.join(process.cwd(), "/reports/json/");
 const htmlReports = path.join(process.cwd(), "/reports/html");

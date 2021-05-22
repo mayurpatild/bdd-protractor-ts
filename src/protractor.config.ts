@@ -1,6 +1,5 @@
-import * as path from "path";
 import { browser, Config } from "protractor";
-import { Reporter } from "../src/support/reporter";
+import { Reporter } from "./support/reporter";
 const jsonReports = process.cwd() + "/reports/json";
 const htmlReport = process.cwd() + "/reports/html";
 
@@ -12,6 +11,10 @@ export const config: Config = {
 
     baseUrl: "https://www.protractortest.org",
 
+    params: {
+        environment: "DEV"
+    },
+
     capabilities: {
         browserName: "chrome",
         shardTestFiles: true,
@@ -22,6 +25,8 @@ export const config: Config = {
     },
 
     directConnect: true,
+
+    ignoreUncaughtExceptions: false,
 
     framework: "custom",
     
@@ -35,20 +40,19 @@ export const config: Config = {
         await browser.waitForAngularEnabled(true);
         await browser.manage().timeouts().implicitlyWait(15000);
         await browser.manage().window().maximize();
-        Reporter.createDirectory(jsonReports, htmlReport);
+        Reporter.createDirectory(jsonReports, htmlReport);        
     },
 
     cucumberOpts: {
-        compiler: "ts:ts-node/register",
-        format: ["json:./reports/json/cucumber_report.json", 'rerun:./reports/rerun.txt'],
+        format: ["message","json:../../reports/json/cucumber-report.json","html","@cucumber/pretty-formatter"],
         require: ["../../typeScript/src/step_definitions/*.steps.js", "../../typeScript/src/support/*.js", "../../typeScript/src/pages/*.po.js"],
-        ignoreUncaughtExceptions: true,
-        strict: true,
-        tags: "@api or @guide"
+        tags: "@api or @guide",
     },
 
     onComplete: () => {
-        Reporter.createHTMLReport();
+        try {
+            Reporter.createHTMLReport();
+        } catch (err) { }
     },
 
     allScriptsTimeout: 120000,
