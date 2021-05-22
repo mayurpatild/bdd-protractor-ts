@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix:
         test: ["v1.x", "nightly"]
-        os: [ubuntu-latest]
+        os: [macOS-latest, windows-latest, ubuntu-latest]
 
     steps:
       - name: Checkout
